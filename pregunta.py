@@ -29,7 +29,7 @@ def ingest_data():
             elif data:
                 data[-1][3] += ' ' + line
 
-    df = pd.DataFrame(data, columns=['clusters', 'cantidad_de_palabras_clave', 'porcentaje_de_palabras_clave', 'principales_palabras_clave'])
+    df = pd.DataFrame(data, columns=['cluster', 'cantidad_de_palabras_clave', 'porcentaje_de_palabras_clave', 'principales_palabras_clave'])
 
     df['principales_palabras_clave'] = df['principales_palabras_clave'].apply(lambda x: ', '.join(re.split(r'\s{2,}|,', x)))
 
