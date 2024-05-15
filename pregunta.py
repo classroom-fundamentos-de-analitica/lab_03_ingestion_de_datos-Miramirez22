@@ -31,7 +31,7 @@ def ingest_data():
 
     df = pd.DataFrame(data, columns=['clusters', 'cantidad_de_palabras_clave', 'porcentaje_de_palabras_clave', 'principales_palabras_clave'])
 
-    df['principales_palabras_clave'] = df['principales_palabras_clave'].apply(lambda x: ', '.join(re.split(r'\s{2,}', x)))
+    df['principales_palabras_clave'] = df['principales_palabras_clave'].apply(lambda x: ', '.join(re.split(r'\s{2,}|,', x)))
     print(df)
 
     return df
